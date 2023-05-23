@@ -16,23 +16,23 @@ public class CricketerController {
 	@Autowired
 	CricketerService service;
 	// select all
-	@RequestMapping("/cricketer/{id}")
+	@RequestMapping("/cricketer/all")
 	public List<CricketerEntity> getCricketers() {
 		return service.getCricketers();
 	}
 	// select specific-1
-	@RequestMapping("/cricketer/{id}")
+	@RequestMapping("/cricketer/id/{id}")
 	public CricketerEntity getCricketerbyId(@PathVariable int id) {
 		return service.getCricketerById(id);
 	}
 	// select specific-2
-	@RequestMapping("/cricketer/{team}")
+	@RequestMapping("/cricketer/team/{team}")
 	public CricketerEntity getCricketerbyTeam(@PathVariable String team) {
 		return service.getCricketerByTeam(team);
 	}
 	// insert
 	@RequestMapping(method = RequestMethod.POST, value = "/cricketer")
-	public void addCricketer(CricketerEntity ce) {
+	public void addCricketer(@RequestBody CricketerEntity ce) {
 		service.addCricketer(ce);
 	}
 	// delete

@@ -13,12 +13,6 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 @Entity
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@SuperBuilder
 public class CricketerEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
